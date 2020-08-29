@@ -1,0 +1,84 @@
+== 改行制御
+
+=== 所謂半角括弧
+
+(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+(ai)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+(aii)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+(aiii)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+(aiiii)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+
+=== 表内の所謂半角括弧
+
+[cols="1"]
+|===
+|foo
+
+|
+(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+(ai)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+(aii)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p) +
+
+|===
+
+
+=== 英字日本語混在
+
+この compiler では int は 32bit つまり 4bytes だが 16bit や 64bit の処理系もある。
+float が 32bit でない system は rare だが double の size は色々。
+
+このcompilerではintは32bitつまり4bytesだが16bitや64bitの処理系もある。
+floatが32bitでないsystemはrareだがdoubleのsizeは色々。
+
+[cols="1,1"]
+|===
+|foo|bar
+
+|この compiler では int は 32bit。つまり 4bytes だが 16bit や 64bit の処理系も、ある。
+float が 32bit でない system は rare だが double の size は色々。
+
+|このcompilerではintは32bit。つまり4bytesだが16bitや64bitの処理系も、ある。
+floatが32bitでないsystemはrareだがdoubleのsizeは色々。
+
+|===
+
+<<<<
+=== 拗音や句点の行頭禁則
+
+ちゃっ。ちゃっ。ちゃっ。ちゃっ。ちゃっ。 +
+Wちゃっ。ちゃっ。ちゃっ。ちゃっ。ちゃっ。 +
+WWちゃっ。ちゃっ。ちゃっ。ちゃっ。ちゃっ。 +
+WWWちゃっ。ちゃっ。ちゃっ。ちゃっ。ちゃっ。 +
+WWWWちゃっ。ちゃっ。ちゃっ。ちゃっ。ちゃっ。 +
+
+=== 括弧類等の行末禁則
+
+[cols="1,1,1"]
+|===
+|foo|bar|baz
+|
+abcdefghi‘1’ +
+abcdefghi“2” +
+|
+abcdefgh〝3〞 +
+abcdefg〝3〞 +
+|
+abcdefgh〝4〟 +
+abcdefg〝4〟 +
+|===
+
+<<<<
+=== ニセimage指令
+
++++
+image:foobar.jpg[ちゃっ。ちゃっ。ちゃっ。]
++++
+
++++
+image:foobar.jpg[Wちゃっ。ちゃっ。ちゃっ。]
++++
+
++++
+image:foobar.jpg[WWちゃっ。ちゃっ。ちゃっ。]
++++
+
